@@ -1,0 +1,20 @@
+<launch>
+
+  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch"/>
+
+  <!-- Here will go our python script that calls the Publisher -->
+  
+
+  <!-- Here will go our python script that calls the Scriber -->
+  <node pkg="robotic_ass1" type="odem_scriber2.py" name="turtlebot_control_Scriber" output="screen">
+  </node>
+
+  <!-- Here will go our python script that calls the Client -->
+  <node pkg="robotic_ass1" type="control_client2.py" name="service_control_client" output="screen">
+  </node>
+  
+  <!-- Here will go our python script that calls the Controllor -->
+
+  <node pkg="turtlebot_ctrl" type="turtlebot_control.py" name="turtlebot_control_server" output="screen">
+  </node>
+</launch>
